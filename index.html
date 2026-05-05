@@ -404,9 +404,9 @@
 
     <!-- Linkvertise Button -->
     <div id="btnSection">
-        <button class="btn-linkvertise btn-pulse" id="lvBtn" onclick="startLinkvertise()">
-            <a href="https://discord.gg/your-discord"🔗&nbsp; รับ Key ฟรี — คลิกที่นี่ 
-        </button>
+        <a class="btn-linkvertise btn-pulse" id="lvBtn" href="https://direct-link.net/5260763/wvQ3nZa9Fw6M" target="_blank" rel="noopener noreferrer">
+            🔗&nbsp; รับ Key ฟรี — คลิกที่นี่
+        </a>
     </div>
 
     <!-- Key Display (hidden until Linkvertise done) -->
@@ -430,8 +430,8 @@
     <!-- Footer -->
     <div class="footer">
         STEMTV Script Hub &nbsp;|&nbsp; Key หมุนเวียนทุก 24 ชั่วโมง<br>
-        <a href="https://discord.gg/your-discord" target="_blank">Discord</a> &nbsp;·&nbsp;
-        <a href="https://youtube.com/@stemtv" target="_blank">YouTube</a>
+        <a href="https://discord.gg/nrSESaHX4B" target="_blank">Discord</a> &nbsp;·&nbsp;
+        <a href="https://www.youtube.com/@stemtv_1" target="_blank">YouTube</a>
     </div>
 
 </div>
@@ -465,17 +465,22 @@
     let   lvDone       = false;
 
     // ─── Linkvertise Flow ────────────────────────────────────────
-    function startLinkvertise() {
-        // เรียก Linkvertise — เมื่อผู้ใช้ทำภารกิจเสร็จ callback จะถูกเรียก
+    function initLinkvertise() {
+        // Process only the return link on this page.
+        const redirectUrl = window.location.origin + window.location.pathname + '?lv=done';
+
+        if (typeof linkvertise !== 'function') {
+            console.warn('Linkvertise script not available. Button will still work as a direct return link.');
+            return;
+        }
+
         linkvertise(PUBLISHER_ID, {
-            whitelist: [],
+            whitelist: [redirectUrl],
             blacklist: [""],
         });
-
-        // Linkvertise จะ redirect แล้ว redirect กลับมา
-        // ตรวจจาก URL parameter ?lv=done
-        checkLinkvertiseReturn();
     }
+
+    initLinkvertise();
 
     function checkLinkvertiseReturn() {
         const params = new URLSearchParams(window.location.search);
