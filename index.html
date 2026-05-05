@@ -1,1 +1,92 @@
-<h1>STEMTV Key Page</h1><p>The key page will be updated soon.</p></p></h1>
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEMTV Script Hub — Get Key</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        :root{--bg:#0d0d14;--surface:#13131f;--card:#1a1a2e;--border:#2a2a45;--accent:#5865f2;--accent2:#9b59b6;--green:#2ecc71;--text:#e8e8f0;--muted:#7b7b9d;--glow:rgba(88,101,242,0.35)}
+        body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+        body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse 80% 50% at 20% 20%,rgba(88,101,242,0.12) 0%,transparent 60%),radial-gradient(ellipse 60% 40% at 80% 80%,rgba(155,89,182,0.10) 0%,transparent 60%);pointer-events:none;z-index:0}
+        .container{position:relative;z-index:1;width:100%;max-width:520px;display:flex;flex-direction:column;gap:20px}
+        .logo{display:flex;align-items:center;gap:12px;justify-content:center;margin-bottom:8px}
+        .logo-icon{width:52px;height:52px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;box-shadow:0 0 24px var(--glow)}
+        .logo-name{font-size:22px;font-weight:900;background:linear-gradient(90deg,#fff 0%,var(--accent) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+        .logo-sub{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.12em;text-transform:uppercase}
+        .card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;position:relative;overflow:hidden}
+        .card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+        .card-title{font-size:15px;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:16px}
+        .steps{display:flex;flex-direction:column;gap:12px}
+        .step{display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--surface);border:1px solid var(--border);border-radius:12px;transition:border-color .2s}
+        .step:hover{border-color:var(--accent)}
+        .step-num{width:30px;height:30px;min-width:30px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff}
+        .step-info h3{font-size:14px;font-weight:700;margin-bottom:2px}
+        .step-info p{font-size:12px;color:var(--muted);line-height:1.5}
+        .btn-lv{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:16px 24px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;font-size:16px;font-weight:800;border:none;border-radius:14px;cursor:pointer;box-shadow:0 4px 24px var(--glow);animation:pulse 2s ease-in-out infinite;font-family:'Inter',sans-serif}
+        .btn-lv:hover{transform:translateY(-2px)}
+        @keyframes pulse{0%,100%{box-shadow:0 4px 24px var(--glow)}50%{box-shadow:0 4px 40px rgba(88,101,242,.6)}}
+        .key-section{display:none}.key-section.visible{display:block}
+        .key-box{background:var(--surface);border:1.5px solid var(--green);border-radius:14px;padding:20px;text-align:center;box-shadow:0 0 20px rgba(46,204,113,.15);animation:appear .5s cubic-bezier(.34,1.56,.64,1)}
+        @keyframes appear{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+        .key-label{font-size:11px;font-weight:700;color:var(--green);letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px}
+        .key-value{font-family:'JetBrains Mono',monospace;font-size:22px;font-weight:700;color:#fff;letter-spacing:.08em;margin-bottom:16px;word-break:break-all}
+        .key-loading{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:13px;animation:blink 1s ease-in-out infinite}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+        .btn-copy{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;background:var(--green);color:#000;font-size:14px;font-weight:800;border:none;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif}
+        .btn-copy.copied{background:#3498db;color:#fff}
+        .expiry{margin-top:12px;font-size:12px;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:6px}
+        .dot{width:7px;height:7px;background:var(--green);border-radius:50%;animation:blink 2s ease-in-out infinite}
+        .footer{text-align:center;font-size:12px;color:var(--muted)}
+        .footer a{color:var(--accent);text-decoration:none}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="logo">
+        <div class="logo-icon">🛡️</div>
+        <div>
+            <div class="logo-name">STEMTV Hub</div>
+            <div class="logo-sub">Key System</div>
+        </div>
+    </div>
+    <div class="card" id="stepsCard">
+        <div class="card-title">📋 วิธีรับ Key ฟรี</div>
+        <div class="steps">
+            <div class="step"><div class="step-num">1</div><div class="step-info"><h3>กดปุ่มด้านล่าง</h3><p>คลิก "รับ Key ฟรี" และทำภารกิจสั้นๆ</p></div></div>
+            <div class="step"><div class="step-num">2</div><div class="step-info"><h3>ทำภารกิจ Linkvertise</h3><p>เยี่ยมชมเว็บสักครู่ เพื่อสนับสนุนผู้พัฒนา</p></div></div>
+            <div class="step"><div class="step-num">3</div><div class="step-info"><h3>Copy Key และนำไปใช้</h3><p>Key จะแสดงหลังจากทำภารกิจเสร็จ</p></div></div>
+        </div>
+    </div>
+    <div id="btnSection">
+        <button class="btn-lv" id="lvBtn" onclick="startLV()">🔗&nbsp; รับ Key ฟรี — คลิกที่นี่</button>
+    </div>
+    <div class="card key-section" id="keySection">
+        <div class="card-title">🔑 Key ของคุณ</div>
+        <div class="key-box">
+            <div class="key-label">✅ KEY วันนี้ (หมุนเวียนทุก 24 ชม.)</div>
+            <div class="key-value" id="keyDisplay"><span class="key-loading">กำลังโหลด Key...</span></div>
+            <button class="btn-copy" id="copyBtn" onclick="copyKey()" style="display:none">📋 Copy Key</button>
+            <div class="expiry" id="expiryTimer" style="display:none"><span class="dot"></span><span id="expiryText">Key หมดอายุใน: กำลังคำนวณ...</span></div>
+        </div>
+    </div>
+    <div class="footer">STEMTV Script Hub &nbsp;|&nbsp; Key หมุนเวียนทุก 24 ชั่วโมง</div>
+</div>
+<script src="https://publisher.linkvertise.com/cdn/linkvertise.js"></script>
+<script>
+    const GIST='https://gist.githubusercontent.com/raw/d8e995c3b4e934c7261709b65fb9b2ed/stemtv-key.txt';
+    const PID=5260763;
+    let key=null,done=false;
+    function startLV(){linkvertise(PID,{whitelist:[],blacklist:[""]});checkReturn();}
+    function checkReturn(){const p=new URLSearchParams(location.search);if(p.get('lv')==='done'||sessionStorage.getItem('lv_done')==='1')onDone();}
+    function onDone(){if(done)return;done=true;sessionStorage.setItem('lv_done','1');document.getElementById('btnSection').style.display='none';document.getElementById('stepsCard').style.display='none';document.getElementById('keySection').classList.add('visible');fetchKey();startTimer();}
+    async function fetchKey(){try{const r=await fetch(GIST+'?t='+Date.now());if(!r.ok)throw new Error('HTTP '+r.status);key=(await r.text()).trim();document.getElementById('keyDisplay').textContent=key;document.getElementById('copyBtn').style.display='inline-flex';document.getElementById('expiryTimer').style.display='flex';}catch(e){document.getElementById('keyDisplay').innerHTML='<span style="color:#e74c3c;font-size:13px">⚠️ โหลด Key ไม่สำเร็จ กรุณา Refresh</span>';}}
+    function copyKey(){if(!key)return;navigator.clipboard.writeText(key).then(()=>{const b=document.getElementById('copyBtn');b.textContent='✅ Copied!';b.classList.add('copied');setTimeout(()=>{b.innerHTML='📋 Copy Key';b.classList.remove('copied');},2000);});}
+    function startTimer(){function u(){const now=new Date(),m=new Date();m.setHours(24,0,0,0);const d=m-now,h=String(Math.floor(d/3600000)).padStart(2,'0'),mi=String(Math.floor((d%3600000)/60000)).padStart(2,'0'),s=String(Math.floor((d%60000)/1000)).padStart(2,'0');document.getElementById('expiryText').textContent='Key หมดอายุใน: '+h+':'+mi+':'+s;}u();setInterval(u,1000);}
+    window.addEventListener('load',checkReturn);
+    window.addEventListener('message',e=>{if(e.data&&(e.data.type==='linkvertise_done'||e.data==='lv_complete'))onDone();});
+</script>
+</body>
+</html>
